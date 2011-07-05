@@ -211,9 +211,9 @@ NSString * const KEYCHAIN_SERVICE_NAME = @"MtGox4Mac";
 
 -(void)gonxControllerCouldNotLogin:(MTGONXController *)sender
 {
-    //chaning colos of username/password box to red if login fails
-    [loginUsername setBackgroundColor: [NSColor colorWithCalibratedRed:1.0 green:0.0 blue:0.0 alpha:1.0]];
-    [loginPassword setBackgroundColor: [NSColor colorWithCalibratedRed:1.0 green:0.0 blue:0.0 alpha:1.0]];
+    //chaning colors of username/password box to red if login fails
+    [loginUsername setBackgroundColor: [NSColor colorWithCalibratedRed:1.0 green:0.85 blue:0.85 alpha:1.0]];
+    [loginPassword setBackgroundColor: [NSColor colorWithCalibratedRed:1.0 green:0.85 blue:0.85 alpha:1.0]];
 }
 
 -(void)gonxControllerCanceledOrder:(MTGONXController *)sender
