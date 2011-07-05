@@ -5516,7 +5516,7 @@
 				</dict>
 			</array>
 		</dict>
-		<string>{{172, 145}, {1400, 952}}</string>
+		<string>{{172, 113}, {1400, 952}}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -7163,7 +7163,7 @@
 			</dict>
 		</dict>
 		<string>file://localhost/Users/michael/Documents/MTGox4Mac/mtgonxClient.xcodeproj/</string>
-		<real>331545669.89174598</real>
+		<real>331545779.52339798</real>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -12931,7 +12931,7 @@
 				<integer>925</integer>
 			</dict>
 		</dict>
-		<real>331545669.86577302</real>
+		<real>331545779.51351702</real>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -13606,7 +13606,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>991</integer>
+					<integer>990</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -13636,37 +13636,7 @@
 					<key>CF$UID</key>
 					<integer>1004</integer>
 				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>1006</integer>
-				</dict>
 			</array>
-		</dict>
-		<dict>
-			<key>$class</key>
-			<dict>
-				<key>CF$UID</key>
-				<integer>142</integer>
-			</dict>
-			<key>NS.base</key>
-			<dict>
-				<key>CF$UID</key>
-				<integer>0</integer>
-			</dict>
-			<key>NS.relative</key>
-			<dict>
-				<key>CF$UID</key>
-				<integer>990</integer>
-			</dict>
-		</dict>
-		<dict>
-			<key>$class</key>
-			<dict>
-				<key>CF$UID</key>
-				<integer>92</integer>
-			</dict>
-			<key>NS.string</key>
-			<string>file://localhost/var/folders/5g/5goOyZUnEzWaIPZag+t8Ck+++TI/-Tmp-/MainMenu-fCJV62a8.xib</string>
 		</dict>
 		<dict>
 			<key>$class</key>
@@ -13699,7 +13669,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>993</integer>
+				<integer>991</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Users/michael/Documents/MTGox4Mac/English.lproj/MainMenu.xib</string>
@@ -13717,7 +13687,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>995</integer>
+				<integer>993</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Users/michael/Documents/MTGox4Mac/English.lproj/InfoPlist.strings</string>
@@ -13735,7 +13705,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>997</integer>
+				<integer>995</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Users/michael/Documents/MTGox4Mac/mtgonxClient.xcodeproj/project.pbxproj</string>
@@ -13753,7 +13723,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>999</integer>
+				<integer>997</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Users/michael/Documents/MTGox4Mac/Controller.m</string>
@@ -13771,7 +13741,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>1001</integer>
+				<integer>999</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Users/michael/Documents/MTGox4Mac/Controller.h</string>
@@ -13789,7 +13759,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>1003</integer>
+				<integer>1001</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Users/michael/Documents/MTGox4Mac/MTGONXController.h</string>
@@ -13807,7 +13777,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>1005</integer>
+				<integer>1003</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Users/michael/Documents/MTGox4Mac/mtgonxClientAppDelegate.m</string>
@@ -13825,7 +13795,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>1007</integer>
+				<integer>1005</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Users/michael/Documents/MTGox4Mac/Order.h</string>
