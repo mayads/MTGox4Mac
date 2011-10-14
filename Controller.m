@@ -18,9 +18,10 @@ NSString * const KEYCHAIN_SERVICE_NAME = @"MtGox4Mac";
 {
     //setting the standard UserValues
     NSMutableDictionary *defaultValues = [[NSMutableDictionary alloc] init];
-    [defaultValues setObject:[NSNumber numberWithInt:3] forKey:RefreshtimeKey];
+    [defaultValues setObject:[NSNumber numberWithInt:10] forKey:RefreshtimeKey];
     [defaultValues setObject:@"" forKey:UsernameKey];
     [defaultValues setObject:@"" forKey:PasswordKey];
+    [defaultValues setObject:@"USD" forKey:CurrencyKey];
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
 }

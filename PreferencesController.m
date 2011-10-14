@@ -11,6 +11,7 @@
 NSString * const RefreshtimeKey = @"Refreshtime";
 NSString * const UsernameKey = @"Username";
 NSString * const PasswordKey = @"Password";
+NSString * const CurrencyKey = @"Currency";
 
 @implementation PreferencesController
 
