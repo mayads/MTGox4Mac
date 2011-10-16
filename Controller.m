@@ -109,8 +109,8 @@ NSString * const KEYCHAIN_SERVICE_NAME = @"MtGox4Mac";
 
 -(void)gonxController:(MTGONXController *)sender ReceivedBalance:(NSDictionary *)balances
 {
-	[balanceUSD setStringValue:[balances objectForKey:@"usds"]];
-	[balanceBTC	setStringValue:[balances objectForKey:@"btcs"]];
+	[balanceUSD setStringValue:[[[[balances objectForKey:@"Wallets"] objectForKey:[[NSUserDefaults standardUserDefaults] stringForKey:CurrencyKey]] objectForKey:@"Balance"] objectForKey:@"display"]];
+	[balanceBTC setStringValue:[[[[balances objectForKey:@"Wallets"] objectForKey:@"BTC"] objectForKey:@"Balance"] objectForKey:@"display"]];
     
     if(!isLoggedIn) //check for login process
     {

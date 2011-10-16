@@ -9,6 +9,11 @@
 #import "MTGONXController.h"
 #import "SBJson.h"
 
+#import "Crypto.h"
+#import "PreferencesController.h"
+#import <CommonCrypto/CommonDigest.h>
+#import <CommonCrypto/CommonHMAC.h>
+
 @implementation MTGONXController
 @synthesize delegate;
 
@@ -37,15 +42,34 @@
 
 -(NSDictionary*)sendRequest:(NSString *)url_ withBodyString:(NSString *)bodyString
 {
+    NSDate *start = [NSDate date];
+    int nonce = [start timeIntervalSince1970];
+    
+    unsigned char cHMACk[CC_SHA512_DIGEST_LENGTH];
+    
 	NSURL *url = [ NSURL URLWithString: url_];
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 	
 	if (bodyString != nil) {
-		NSString *type = [NSString stringWithString:@"application/x-www-form-urlencoded"];
-		NSData *body = [NSData dataWithData:[bodyString dataUsingEncoding:2]];
-		[request addValue:type forHTTPHeaderField:@"Content-Type"];
-		[request setHTTPBody:body];
 		[request setHTTPMethod:@"POST"];
+        
+        [[NSUserDefaults standardUserDefaults] stringForKey:CurrencyKey];
+        
+        NSString* mtKey = @"";
+        NSString* mtSecret = @"";
+        
+        NSString *args = [NSString stringWithFormat:@"&nonce=%u", nonce];
+        NSData *tempSec = [NSData base64DataFromString:mtSecret];
+        CCHmac(kCCHmacAlgSHA512, tempSec.bytes, tempSec.length, [args cStringUsingEncoding:NSASCIIStringEncoding], strlen([args cStringUsingEncoding:NSASCIIStringEncoding]), cHMACk);
+        NSData *tempData = [[NSData alloc] initWithBytes:cHMACk length:CC_SHA512_DIGEST_LENGTH];
+        [request setValue:mtKey forHTTPHeaderField:@"Rest-Key"];
+        [request setValue:[NSString base64StringFromData:tempData length:tempData.length] forHTTPHeaderField:@"Rest-Sign"];
+        [request setHTTPBody:[args dataUsingEncoding:NSUTF8StringEncoding]];
+        
+//        NSString *type = [NSString stringWithString:@"application/x-www-form-urlencoded"];
+//		NSData *body = [NSData dataWithData:[bodyString dataUsingEncoding:2]];
+//		[request addValue:type forHTTPHeaderField:@"Content-Type"];
+//		[request setHTTPBody:body];
 	}
     
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
@@ -110,19 +134,19 @@
 {
 	NSAutoreleasePool *pool = [NSAutoreleasePool new];
 	
-	NSString *url = @"https://mtgox.com/code/getFunds.php";
-	NSString *bodyString = [NSString stringWithFormat:@"name=%@&pass=%@", [userData objectForKey:@"username"], [userData objectForKey:@"password"]];
+	NSString *url = @"https://mtgox.com/api/0/info.php";
+	NSString *bodyString =@"";//= [NSString stringWithFormat:@"name=%@", [userData objectForKey:@"username"]];
 	
 	NSDictionary* result = [self sendRequest:url withBodyString:bodyString];
 	
 	if (result == nil) {
-        NSLog(@"Error while getting Balance");
+        NSLog(@"Error while getting balance");
 		return;
 	}
 	
     NSLog(@"%@", result);
 	
-    //check if logn was correct
+    //check if login was correct
     NSString *error = [result objectForKey:@"error"];
     if (error != nil) {
         NSLog(@"Login was incorrect!");
